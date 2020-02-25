@@ -1,6 +1,10 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Raleway', sans-serif;
-    background-color: #EAE0D5;
+    background-color: #fdfafa;
     margin: 0;
 }
 
@@ -14,7 +18,7 @@ body {
 
 header {
     background-color: #ff5757;
-    border-bottom: 50px solid #EAE0D5;
+    border-bottom: 50px solid #fdfafa;
 }
 
 .header-content {
@@ -24,14 +28,14 @@ header {
 }
 
 header h1 {
-    color: #EAE0D5;
+    color: #fdfafa;
     font-size: 40px;
     text-align: center;
 }
 
 header #profile {
     border-radius: 100%;
-    border: 3px solid #EAE0D5;
+    border: 3px solid #fdfafa;
     margin-bottom: -50px;
     max-width: 100%;
     height: auto;
@@ -118,6 +122,21 @@ footer {
     height: 50px;
     width: 100%;
     transition: bottom 250ms ease-in-out;
+}
+
+.download {
+    background-color: white;
+    color: black;
+    margin-right: auto;
+    margin-left: 20px;
+    text-decoration: none;
+    padding: 7px 12px;
+    font-size: 20px;
+}
+
+.download i {
+    color: #ff5757;
+    margin-right: 5px;
 }
 
 footer.active {
