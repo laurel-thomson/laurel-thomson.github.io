@@ -1,6 +1,15 @@
 body {
     font-family: 'Raleway', sans-serif;
     background-color: #EAE0D5;
+    margin: 0;
+}
+
+#top-anchor {
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    left: 0;
+    top: 100px;
 }
 
 header {
@@ -26,6 +35,93 @@ header #profile {
     margin-bottom: -50px;
     max-width: 100%;
     height: auto;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    width: 150px;
+}
+
+nav a {
+    display: block;
+    background-color: #ff5757;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px 12px 0;
+    text-align: right;
+    font-size: 18px;
+    font-weight: 700;
+    transform: translateX(100%);
+}
+
+nav.active a {
+    transform: translateX(0);
+}
+
+nav a.active,
+nav a:hover {
+    background-color: #764e84;
+    text-decoration: underline;
+}
+
+nav.active a:nth-child(1) {
+    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+nav.active a:nth-child(2) {
+    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 100ms;
+}
+
+nav.active a:nth-child(3) {
+    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 200ms;
+}
+
+nav.active a:nth-child(4) {
+    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 300ms;
+}
+
+nav.active a:nth-child(5) {
+    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 400ms;
+}
+
+nav a:nth-child(1) {
+    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 400ms;
+}
+
+nav a:nth-child(2) {
+    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 300ms;
+}
+
+nav a:nth-child(3) {
+    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 200ms;
+}
+
+nav a:nth-child(4) {
+    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 100ms;
+}
+
+nav a:nth-child(5) {
+    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+footer {
+    position: fixed;
+    bottom: -50px;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #ff5757;
+    height: 50px;
+    width: 100%;
+    transition: bottom 250ms ease-in-out;
+}
+
+footer.active {
+    bottom: 0;
 }
 
 @media screen and (min-width: 640px) {
