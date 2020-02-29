@@ -16,19 +16,6 @@ const footerCallback = function(entries) {
 const footerObserver = new IntersectionObserver(footerCallback, {});
 footerObserver.observe(anchor);
 
-const navCallback = function(entries) {
-    entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-            nav.classList.remove('active');
-        } else {
-            nav.classList.add('active');
-        }
-    });
-}
-
-const navObserver = new IntersectionObserver(navCallback, { threshold : 0.75 });
-navObserver.observe(header);
-
 const sections = document.querySelectorAll('h2');
 const navItems = document.querySelectorAll('nav a');
 
@@ -51,4 +38,25 @@ const sectionObserver = new IntersectionObserver(sectionCallback, {});
 sections.forEach(function(section) {
     sectionObserver.observe(section);
 });
+
+const navCallback = function(entries) {
+    entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+            nav.classList.remove('active');
+        } else {
+            nav.classList.add('active');
+        }
+    });
+}
+
+const navObserver = new IntersectionObserver(navCallback, { threshold : 0.75 });
+
+
+if (window.innerWidth > 1024) {
+    navObserver.observe(header);
+} else {
+    document.getElementById('dropdown-toggle').addEventListener('click', function(event) {
+        document.getElementById('nav').classList.toggle('active');
+    });
+}
 

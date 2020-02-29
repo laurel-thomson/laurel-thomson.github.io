@@ -46,7 +46,7 @@ nav {
     top: 0;
     right: 0;
     overflow: hidden;
-    width: 90px;
+    width: 100%;
 }
 
 nav a {
@@ -58,65 +58,89 @@ nav a {
     text-align: right;
     font-size: 14px;
     font-weight: 700;
-    transform: translateX(100%);
 }
 
-nav.active a {
-    transform: translateX(0);
-}
 
-nav a.active,
-nav a:hover {
+nav a.active {
     background-color: #764e84;
     text-decoration: underline;
 }
 
-nav.active a:nth-child(1) {
-    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
+nav #navbar {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 40px;
+    background-color: #ff5757;
 }
 
-nav.active a:nth-child(2) {
-    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 100ms;
+nav #navbar button {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    width: 40px;
+    border: none;
+    box-shadow: none;
 }
 
-nav.active a:nth-child(3) {
-    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 200ms;
+nav #navbar button:focus {
+    outline: none;
 }
 
-nav.active a:nth-child(4) {
-    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 300ms;
+nav .hamburger {
+    position: relative;
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    transition: transform 200ms ease-in-out;
 }
 
-nav.active a:nth-child(5) {
-    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 400ms;
+nav .hamburger::before,
+nav .hamburger::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    right: 0;
+    background-color: white;
+    transition: transform 200ms ease-in-out;
 }
 
-nav.active a:nth-child(6) {
-    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 500ms;
+nav .hamburger::before {
+    bottom: 7px;
 }
 
-nav a:nth-child(1) {
-    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 500ms;
+nav .hamburger::after {
+    top: 7px;
 }
 
-nav a:nth-child(2) {
-    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 400ms;
+nav.active .hamburger::before {
+    transform: rotate(0);
+    top: 0;
+    right: 0;
 }
 
-nav a:nth-child(3) {
-    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 300ms;
+nav.active .hamburger {
+    transform: rotate(45deg);
+    top: 0;
+    right: 0;
 }
 
-nav a:nth-child(4) {
-    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 200ms;
+nav.active .hamburger::after {
+    transform: rotate(90deg);
+    top: 0;
+    right: 0;
 }
 
-nav a:nth-child(5) {
-    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 100ms;
+nav #dropdown {
+    width: 100px;
+    margin-left: auto;
+    transform: translateX(100%);
+    transition: transform 200ms ease-in-out;
 }
 
-nav a:nth-child(6) {
-    transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
+nav.active #dropdown {
+    transform: translateX(0);
 }
 
 .content {
@@ -213,14 +237,6 @@ footer a:hover i {
         font-size: 50px;
     }
 
-    nav {
-        width: 120px;
-    }
-
-    nav a {
-        font-size: 16px;
-    }
-
     .portfolio-tiles {
         max-width: 100vw;
         display: grid;
@@ -231,6 +247,76 @@ footer a:hover i {
 }
 
 @media screen and (min-width: 1024px) {
+    nav {
+        width: 120px;
+    }
+
+    nav #navbar,
+    nav #dropdown-toggle {
+        display: none;
+    }
+
+    nav a {
+        transform: translateX(100%);
+        font-size: 16px;
+    }
+
+    nav.active a {
+        transform: translateX(0);
+    }
+
+    nav a:hover {
+        background-color: #764e84;
+        text-decoration: underline;
+    }
+
+    nav.active a:nth-child(1) {
+        transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
+    }
+
+    nav.active a:nth-child(2) {
+        transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 100ms;
+    }
+
+    nav.active a:nth-child(3) {
+        transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 200ms;
+    }
+
+    nav.active a:nth-child(4) {
+        transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 300ms;
+    }
+
+    nav.active a:nth-child(5) {
+        transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 400ms;
+    }
+
+    nav.active a:nth-child(6) {
+        transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 500ms;
+    }
+
+    nav a:nth-child(1) {
+        transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 500ms;
+    }
+
+    nav a:nth-child(2) {
+        transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 400ms;
+    }
+
+    nav a:nth-child(3) {
+        transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 300ms;
+    }
+
+    nav a:nth-child(4) {
+        transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 200ms;
+    }
+
+    nav a:nth-child(5) {
+        transition: background-color 200ms ease-in-out, transform 200ms ease-in-out 100ms;
+    }
+
+    nav a:nth-child(6) {
+        transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
+    }
     .content {
         max-width: 1500px;
         margin-left: auto;
