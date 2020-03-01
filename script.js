@@ -50,13 +50,9 @@ const navCallback = function(entries) {
 }
 
 const navObserver = new IntersectionObserver(navCallback, { threshold : 0.75 });
+navObserver.observe(header);
 
-
-if (window.innerWidth > 1024) {
-    navObserver.observe(header);
-} else {
-    document.getElementById('dropdown-toggle').addEventListener('click', function(event) {
-        document.getElementById('nav').classList.toggle('active');
-    });
-}
+document.getElementById('dropdown-toggle').addEventListener('click', function(event) {
+    document.getElementById('nav').classList.toggle('open');
+});
 
