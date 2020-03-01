@@ -8,6 +8,11 @@ body {
     margin: 0;
 }
 
+::selection {
+    background-color: #764e84;
+    color: white;
+}
+
 #top-anchor {
     height: 1px;
     width: 1px;
@@ -145,7 +150,7 @@ nav.open #dropdown {
 }
 
 .content {
-    padding: 20px;
+    padding: 20px 20px 50px;
 }
 
 .content h2 {
@@ -154,10 +159,12 @@ nav.open #dropdown {
 
 .content h5 {
     margin-top: 0;
+    margin-bottom: 0;
 }
 
 .content p {
     line-height: 1.5em;
+    font-size: 15px;
 }
 
 .divider {
@@ -218,6 +225,10 @@ footer.active {
     color: white;
 }
 
+.download-text {
+    display: none;
+}
+
 footer i {
     font-size: 20px;
     margin: 7.5px;
@@ -260,9 +271,26 @@ footer a:last-child {
         grid-template-columns: 1fr 1fr;
         grid-auto-flow: row;
     }
+
+    .download-text {
+        display: inline;
+    }
 }
 
 @media screen and (min-width: 1024px) {
+    header {
+        padding-top: 0;
+    }
+
+    header img {
+        margin-top: 30px;
+    }
+
+    header h1 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
     nav {
         width: 120px;
     }
