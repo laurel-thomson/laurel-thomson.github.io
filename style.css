@@ -145,8 +145,19 @@ nav.open #dropdown {
 }
 
 .content {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 20px;
+}
+
+.content h2 {
+    margin-bottom: 10px;
+}
+
+.content h5 {
+    margin-top: 0;
+}
+
+.content p {
+    line-height: 1.5em;
 }
 
 .divider {
@@ -259,6 +270,10 @@ footer a:last-child {
     nav #navbar,
     nav #dropdown-toggle {
         display: none;
+    }
+
+    nav #dropdown {
+        transform: none;
     }
 
     nav a {
