@@ -56,3 +56,11 @@ document.getElementById('dropdown-toggle').addEventListener('click', function(ev
     document.getElementById('nav').classList.toggle('open');
 });
 
+navItems.forEach(function(navItem) {
+    navItem.addEventListener('click', function(event) {
+        if (window.innerWidth < 1024) {
+            document.getElementById('nav').classList.remove('open');
+        }
+    });
+});
+
