@@ -34,7 +34,7 @@ const sectionCallback = function(entries) {
     });
 }
 
-const sectionObserver = new IntersectionObserver(sectionCallback, {});
+const sectionObserver = new IntersectionObserver(sectionCallback, { rootMargin: "0% 0% -50% 0%"});
 sections.forEach(function(section) {
     sectionObserver.observe(section);
 });

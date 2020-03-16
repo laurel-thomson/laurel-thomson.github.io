@@ -160,11 +160,12 @@ nav.open #dropdown {
 }
 
 .content {
-    padding: 20px 20px 50px;
+    padding: 20px 20px 200px;
 }
 
 .content h2 {
     margin-bottom: 10px;
+    padding-top: 50px;
 }
 
 .content h5 {
@@ -190,6 +191,11 @@ nav.open #dropdown {
 
 .img-cont, .img-cont img {
     width: 100%;
+}
+
+.content .fa-heart {
+    color: #764e84;
+    font-size: 16px;
 }
 
 footer {
@@ -376,6 +382,7 @@ footer a:last-child {
     nav a:nth-child(6) {
         transition: background-color 200ms ease-in-out, transform 200ms ease-in-out;
     }
+
     .content {
         max-width: 1500px;
         margin-left: auto;
@@ -383,6 +390,11 @@ footer a:last-child {
         padding-left: 150px;
         padding-right: 150px;
     }
+
+    .content h2 {
+        padding-top: 20px;
+    }
+
     .portfolio-tiles {
         grid-template-columns: 1fr 1fr 1fr;
     }
