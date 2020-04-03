@@ -220,7 +220,10 @@ footer {
     background-color: #ff5757;
     height: 40px;
     width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
     transition: bottom 250ms ease-in-out;
+    box-sizing: border-box;
 }
 
 footer.active {
@@ -231,7 +234,6 @@ footer.active {
     background-color: white;
     color: black;
     margin-right: auto;
-    margin-left: 20px;
     text-decoration: none;
     padding: 4px 10px;
     font-size: 16px;
@@ -269,10 +271,6 @@ footer a:hover i {
     color: #764e84;
 }
 
-footer a:last-child {
-    margin-right: 12.5px;
-}
-
 @media screen and (min-width: 640px) {
     header {
         padding-top: 30px;
@@ -303,6 +301,10 @@ footer a:last-child {
 
     .download-text {
         display: inline;
+    }
+
+    footer .phone-number {
+        display: none;
     }
 }
 
